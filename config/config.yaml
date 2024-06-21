@@ -17,3 +17,18 @@ data_ingestion:
   # then again creating data_ingestion folder inside the artifacts
   root_dir : artifacts//data_ingestion
   local_data_file : artifacts//data_ingestion//Raw_data.csv
+
+
+
+#################################### DATA-VALIDATION-CONFIGURATION ################################
+
+
+data_validation:
+  root_dir : artifacts//data_validation
+  local_data_file : artifacts//data_ingestion//Raw_data.csv
+
+  # when the data validation is performed on our data if it is in correct format it will return True else data validation False
+  # Then only we will be starting the training pipelines only when the data is in correct format which saves the computational cost
+  # Here we will be doing the schema.yaml validation
+
+  STATUS_FILE : artifacts//data_validation//status.txt
