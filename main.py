@@ -6,6 +6,7 @@ from src.HealthInsurancePrediction.pipeline.stage_01_dataIngestion import DataIn
 from src.HealthInsurancePrediction.Exception.custom_exception import CustomException
 from src.HealthInsurancePrediction.pipeline.stage_02_dataValidation import DataValidationTrainingPipeline
 from src.HealthInsurancePrediction.pipeline.stage_03_dataTransformation import DataTransformationPipeline
+from src.HealthInsurancePrediction.pipeline.stage_04_modelTraining import ModelTrainingPipeline
 
 
 STAGE_NAME = 'Data Ingestion Stage'
@@ -37,5 +38,15 @@ try:
     logger.info(f'-----------stage {STAGE_NAME} started------------------------')
     datatransformation = DataTransformationPipeline()
     datatransformation.main()
+except Exception as e:
+    raise CustomException(e, sys)
+
+
+STAGE_NAME = 'Model Training Stage'
+
+try:
+    logger.info(f'--------------------stage {STAGE_NAME} started---------------------')
+    model_training_obj = ModelTrainingPipeline()
+    model_training_obj.main()
 except Exception as e:
     raise CustomException(e, sys)
