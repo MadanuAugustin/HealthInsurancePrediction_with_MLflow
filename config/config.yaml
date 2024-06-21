@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+#################################### DATA-INGESTION-CONFIGURATION ################################
+
+# creating the root folder as artifacts
+
+artifacts_root : artifacts
+
+# defining the data_ingestion coonfiguration
+
+data_ingestion:
+  # then again creating data_ingestion folder inside the artifacts
+  root_dir : artifacts//data_ingestion
+  local_data_file : artifacts//data_ingestion//Raw_data.csv
