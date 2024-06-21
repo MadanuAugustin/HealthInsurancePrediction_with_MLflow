@@ -32,3 +32,13 @@ data_validation:
   # Here we will be doing the schema.yaml validation
 
   STATUS_FILE : artifacts//data_validation//status.txt
+
+
+#################################### DATA-TRANSFORMATION-CONFIGURATION ################################
+
+
+data_transformation :
+  root_dir : artifacts//data_transformation
+  local_data_file : artifacts//data_ingestion//Raw_data.csv
+  train_path : artifacts//data_transformation
+  test_path : artifacts//data_transformation
