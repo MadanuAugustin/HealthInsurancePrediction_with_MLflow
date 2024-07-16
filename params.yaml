@@ -1,5 +1,9 @@
 
-
-
-
-key : val
+RandomForestRegressor:
+  n_estimators : 20
+  criterion : 'friedman_mse'
+  n_jobs : -1
+  max_depth : 15
+  min_samples_leaf : 10
+  max_features : 10
+  
